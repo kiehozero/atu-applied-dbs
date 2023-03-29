@@ -1,37 +1,21 @@
-# following Gerard's demo
+# Write a Python program that has 2 arrays in the main function:
+#    One containing several elements which are numbers.
+#    The other empty.
+# Write another function which accepts a number as a parameter and returns the number doubled.
+# The main function should call this function for each element of the 1st array and populate the 2nd array with the doubled values when the 2nd array is full it should be printed out
 
 def main():
-    nameStr = "Enter name: "
-    ageStr = "Enter age: "
-    while True:
-        display_menu()
-        choice = int(input("Choice:"))
+    oneArr = [1,2,15,7,3,6,23]
+    twoArr = timesTwo(oneArr)
+    print(oneArr)
+    print(twoArr)
 
-        if choice == 1:
-            name = get_name(nameStr)
-            print(name.upper())
 
-        elif choice == 2:
-            age = get_age(ageStr)
-            print(age + 1)
-        elif choice == 3:
-            break
-        else:
-            print("Invalid choice")
-
-def display_menu():
-    print("MENU")
-    print("====")
-    print("1 - Get Name")
-    print("2 - Get Age")
-    print("3 - Exit")
-
-def get_name(n):
-    name = input(n)
-    return name
-
-def get_age(a):
-    return input(a)
+def timesTwo(firstArr):
+    secondArr = []
+    for i in firstArr:
+        secondArr.append(i * 2)
+    return secondArr
 
 if __name__ == "__main__":
     main()
