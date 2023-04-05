@@ -10,7 +10,7 @@ def main():
 		choice = input("Enter choice: ")
 		
 		if (choice == "1"):
-			array = fill_array()
+			array = fill_array(array)
 			display_menu()
 		elif (choice == "2"):
 			print(array)
@@ -19,34 +19,38 @@ def main():
 			find_gt_in_array(array)
 			display_menu()
 		elif (choice == "4"):
-			break;
+			break
 		else:
 			display_menu()
 			
-			
-def fill_array():
-# Write the necessary code to fill the array.
-# -1 should not be part of the array
 
-# The following line of code is only to allow 
-# the program to run.
-# It should be deleted when you write your
-# own code
-	x = 1;
+# choice 1		
+def fill_array(array):
+	# Write the necessary code to fill the array
+	# -1 should not be part of the array
+	array = []
+	while True:
+		digit = int(input("Enter a value to send to the array: "))
+		if (digit == -1):
+			break
+		else:
+			array.append(digit)
+	return array
 
 
+# choice 3
 def find_gt_in_array(array):
-# Write the necessary code to get a number from the user
-# and print out all numbers in the array that are greater
-# than this number
+	# Write the necessary code to get a number from the user
+	# and print out all numbers in the array that are greater
+	j = int(input("Enter a value to return the array values that are greater than it: "))
+	greats = []
+	for i in array:
+		if (i > j):
+			greats.append(i)
+	print(greats)
 
-# The following line of code is only to allow 
-# the program to run.
-# It should be deleted when you write your
-# own code
-	x = 1;
 
-
+# choice 3
 def display_menu():
     print("")
     print("MENU")
@@ -55,6 +59,7 @@ def display_menu():
     print("2 - Print Array")
     print("3 - Find > in Array")
     print("4 - Exit")
+
 
 if __name__ == "__main__":
 	# execute only if run as a script 
