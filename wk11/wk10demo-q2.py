@@ -9,7 +9,7 @@ def connect():
     global driver
     uri = "neo4j://localhost:7687"
     # note here that we don't define the database to connect to, it just uses whatever is currently active on the browser
-    driver = GraphDatabase.driver(uri,auth=("neo4j", "password"), max_connection_lifetime=1000)
+    driver = GraphDatabase.driver(uri,auth=("neo4j", "#"), max_connection_lifetime=1000)
 
 def add_student(tx, sid, name):
     query = 'CREATE(:Student{sid:$x, name:$y})'

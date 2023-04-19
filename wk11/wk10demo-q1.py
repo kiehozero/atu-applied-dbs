@@ -8,7 +8,7 @@ def connect():
     global driver
     uri = "neo4j://localhost:7687"
     # note here that we don't define the database to connect to, it just uses whatever is currently active on the browser
-    driver = GraphDatabase.driver(uri,auth=("neo4j", "password"), max_connection_lifetime=1000)
+    driver = GraphDatabase.driver(uri,auth=("neo4j", "#"), max_connection_lifetime=1000)
 
 # tx is a pre-built object inside the neo4j driver for handling transactions: https://neo4j.com/docs/api/python-driver/current/api.html#neo4j.ManagedTransaction
 def get_students_by_module(tx, user_module):
